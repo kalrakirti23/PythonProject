@@ -1,11 +1,13 @@
-''' Python program to find the
-multiplication table (from 1 to 10)'''
+import mysql.connector
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="HMRITM123@",
+  database="demoPython"
+)
 
-num = 12
+mycursor = mydb.cursor()
 
-# To take input from the user
-# num = int(input("Display multiplication table of? "))
+mycursor.execute("Insert into student_master values(120,'Ravan','12')")
+print(mycursor)
 
-# use for loop to iterate 10 times
-for i in range(1, 11):
-   print(num,'x',i,'=',num*i)
